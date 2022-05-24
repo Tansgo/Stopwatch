@@ -1,0 +1,70 @@
+
+@mixin flex-center{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+
+body{
+  background: black;
+  font-family: monospace;
+}
+
+.component{
+  @include flex-center;
+  margin-top: 200px;
+}
+
+.stopWatch{
+  height: 450px;
+  width: 800px;
+  border: black 2px solid;
+  border-radius: 10px;
+  display: grid;
+  background: white;
+
+  &__time{
+    justify-self: center;
+    height: 200px;
+    width: 110%;
+    margin-top: 50px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #4618ea, pink, #4618ea);
+
+    & > #timer {
+      @include flex-center;
+      font-size: 4rem;
+      position: relative;
+      top: 30%;
+    }
+  }
+
+  &__buttons{
+    justify-self: center;
+
+    & > button{
+      margin: 0 4rem;
+      background-color: black;
+      color: white;
+      width: 130px;
+      height: 65px;
+      font-size: 1.5rem;
+      border-radius: 10px;
+      border-style: none;
+      transition: all 700ms;
+
+      &:hover{
+        opacity: 0.65;
+      }
+    }
+
+    & > #reset:hover{
+      background-color: #be0000;
+      opacity: 1;
+      transform: scale(1.15);
+    }
+
+  }
+
+}
